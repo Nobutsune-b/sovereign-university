@@ -12,7 +12,12 @@ import {
 import { createTRPCRouter, publicProcedure } from '../../trpc';
 
 const getCoursesProcedure = publicProcedure
-  .meta({ openapi: { method: 'GET', path: '/content/courses' } })
+  .meta({
+    openapi: {
+      method: 'GET',
+      path: '/content/courses'
+    }
+  })
   .input(
     z
       .object({
@@ -27,7 +32,10 @@ const getCoursesProcedure = publicProcedure
 
 const getCourseProcedure = publicProcedure
   .meta({
-    openapi: { method: 'GET', path: '/content/courses/{id}/{language}' },
+    openapi: {
+      method: 'GET',
+      path: '/content/courses/{id}/{language}'
+    },
   })
   .input(
     z.object({

@@ -9,7 +9,12 @@ import {
 import { publicProcedure } from '../../trpc';
 
 export const webhooksProcedure = publicProcedure
-  .meta({ openapi: { method: 'POST', path: '/github/webhooks' } })
+  .meta({
+    openapi: {
+      method: 'POST',
+      path: '/github/webhooks'
+    }
+  })
   .input(z.object({}))
   .output(z.void())
   .mutation(async ({ ctx }) => {

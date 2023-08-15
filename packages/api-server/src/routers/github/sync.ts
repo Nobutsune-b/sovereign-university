@@ -7,7 +7,12 @@ import { publicProcedure } from '../../trpc';
 
 // TODO: Protect this endpoint (admin only when we have roles)
 export const syncProcedure = publicProcedure
-  .meta({ openapi: { method: 'POST', path: '/github/sync' } })
+  .meta({
+    openapi: {
+      method: 'POST',
+      path: '/github/sync'
+    }
+  })
   .input(z.void())
   .output(z.void())
   .mutation(async ({ ctx }) => {

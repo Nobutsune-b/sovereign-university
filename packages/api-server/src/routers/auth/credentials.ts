@@ -26,7 +26,12 @@ const loginCredentialsSchema = z.object({
 
 export const credentialsAuthRouter = createTRPCRouter({
   register: publicProcedure
-    .meta({ openapi: { method: 'POST', path: '/auth/credentials' } })
+    .meta({
+      openapi: {
+        method: 'POST',
+        path: '/auth/credentials'
+      }
+    })
     .input(registerCredentialsSchema)
     .output(
       z.object({
@@ -76,7 +81,12 @@ export const credentialsAuthRouter = createTRPCRouter({
       };
     }),
   login: publicProcedure
-    .meta({ openapi: { method: 'POST', path: '/auth/credentials/login' } })
+    .meta({
+      openapi: {
+        method: 'POST',
+        path: '/auth/credentials/login'
+      }
+    })
     .input(loginCredentialsSchema)
     .output(
       z.object({
